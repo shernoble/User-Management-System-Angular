@@ -1,3 +1,4 @@
+<app-button routerLink="/new-user" color="green" text="Add User"></app-button>
 <div class="wrapper">  
     <table>
         
@@ -8,14 +9,6 @@
             <th>Gender</th>
             <th>Status</th>
         </tr>
-        <!-- <app-user-item *ngFor="let user of users" [user]="user"></app-user-item> -->
-        <!-- <tr *ngFor="let user of users" >
-            <td data-cell="ID">{{user.id}}</td>
-            <td data-cell="Name">{{user.name}}</td>
-            <td data-cell="Email ID">{{user.email}}</td>
-            <td data-cell="Gender">{{user.gender}}</td>
-            <td data-cell="Status">{{user.status}}</td>
-        </tr> -->
         <ng-container *ngFor="let user of users">
             <tr app-user-item  [user]="user" ></tr>
         </ng-container>
