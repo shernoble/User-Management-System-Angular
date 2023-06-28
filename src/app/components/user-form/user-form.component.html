@@ -1,60 +1,30 @@
-    <!-- <section class="container my-2 mx-6">   
-    <form>
-        <div class="form-group">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>male</option>
-                <option>female</option>
-                <option>other</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <input type="checkbox" checked data-toggle="toggle" data-on="Ready" data-off="Not Ready" data-onstyle="success" data-offstyle="danger">
-        </div>
-        <button type="submit" class="btn btn-primary form-control">Submit</button>
-    </form>
-    </section>  -->
 
-    <!doctype html>
     
 <div align="center">
 <section class="container">
         <header>Registration Form</header>
-        <form action="#" class="form">
+        <form class="form" (ngSubmit)="onSubmit()">
             <div class="input-box" align="left">
                 <label>Full Name</label>
-                <input type="text" placeholder="Enter full name" required />
+                <input type="text" placeholder="Enter full name" name="name" [(ngModel)]="name" required />
             </div>
             <div class="input-box" align="left">
                 <label>Email Address</label>
-                <input type="text" placeholder="Enter email address" required />
+                <input type="text" placeholder="Enter email address" name="email" [(ngModel)]="email" required />
             </div>
             <div class="gender-box" align="left">
                 <h3>Gender</h3>
                     <div class="gender-option">
                         <div class="gender">
-                        <input type="radio" id="check-male" name="gender" checked />
+                        <input type="radio" value="male" id="male" name="gender" [(ngModel)]="gender" checked />
                         <label for="check-male">male</label>
                         </div>
                         <div class="gender">
-                        <input type="radio" id="check-female" name="gender" />
+                        <input type="radio" value="female" id="female" name="gender" [(ngModel)]="gender"/>
                         <label for="check-female">Female</label>
                         </div>
                         <div class="gender">
-                        <input type="radio" id="check-other" name="gender" />
+                        <input type="radio" value="other" id="other" name="gender" [(ngModel)]="gender"/>
                         <label for="check-other">prefer not to say</label>
                         </div>
                     </div>
@@ -66,15 +36,19 @@
                 </div> -->
                 <span>
                 <p>inactive/active</p>
-                <label class="switch" for="status-switch">
-                    <input type="checkbox" name="status-switch" id="status-switch">
+                <label class="switch" >
+                    <input type="checkbox" name="status" id="status" [(ngModel)]="status">
                     <span class="slider round"></span>
                 </label>
                 </span>
             </div>
             
 
-            <button>Submit</button>
+            <!-- <button>Submit</button> -->
+            <input type="submit" value="Submit" class=" submit-btn btn btn-block">
         </form>
+        <!-- shows two-way-binding i.e. input and output -->
+        <!-- {{gender}} -->
+        <!-- {{status}} -->
 </section>
 </div>

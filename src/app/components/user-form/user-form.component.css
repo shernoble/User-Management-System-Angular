@@ -96,7 +96,7 @@ border: none;
 color: #707070;
 font-size: 1rem;
 }
-.form button {
+.form .submit-btn {
 height: 55px;
 width: 100%;
 color: #fff;
@@ -108,7 +108,7 @@ cursor: pointer;
 transition: all 0.2s ease;
 background: rgb(130, 106, 251);
 }
-.form button:hover {
+.form .submit-btn:hover {
 background: rgb(88, 56, 250);
 }
 /*Responsive*/

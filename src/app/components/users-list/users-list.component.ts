@@ -21,8 +21,6 @@ export class UsersListComponent {
     });
   }
 
-  nextPage(){
-    
-  }
+  
 
 }
