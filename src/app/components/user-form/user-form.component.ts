@@ -1,6 +1,7 @@
-import { Component ,Output,EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 import { User } from 'src/app/User';
 import { UserService } from 'src/app/services/user.service';
+import { FormControl,Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,6 +10,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent {
+
+  nameControl: FormControl = new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z ]+$')]);
+  emailControl : FormControl = new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}')]);
+
 
   users : User[]=[];
 
@@ -21,11 +26,19 @@ export class UserFormComponent {
 
   onSubmit(){
     // do basic validation here -client side?
+    // name validate: only alphabets n space
+    //email: valid email and not in unique
+    
 
     if(!this.name) {
       alert("please enter your name");
       return;
     }
+    if(!this.email){
+      alert("please enter your email");
+      return ;
+    }
+    
 
     const newUser={
       name : this.name,
@@ -33,7 +46,8 @@ export class UserFormComponent {
       gender : this.gender,
       status: this.status? "active":"inactive"
     }
-
+    
+    
     this.userService.addUser(newUser).subscribe((newUser) => {
       this.users.push(newUser);
     })

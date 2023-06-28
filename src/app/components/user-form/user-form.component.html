@@ -5,12 +5,15 @@
         <header>Registration Form</header>
         <form class="form" (ngSubmit)="onSubmit()">
             <div class="input-box" align="left">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter full name" name="name" [(ngModel)]="name" required />
+                <label>Full Name*</label>
+                <input type="text" placeholder="Enter full name" name="name" [formControl]="nameControl" [(ngModel)]="name" required />
+                <div *ngIf="nameControl.hasError('pattern')">Invalid name format. Only alphabets and spaces are allowed.</div>
+                <!-- <div *ngIf="nameControl.hasError('required')">Name is required.</div> -->
             </div>
             <div class="input-box" align="left">
-                <label>Email Address</label>
-                <input type="text" placeholder="Enter email address" name="email" [(ngModel)]="email" required />
+                <label>Email Address*</label>
+                <input type="text" placeholder="Enter email address" name="email" [formControl]="emailControl" [(ngModel)]="email" required />
+                <div *ngIf="emailControl.hasError('pattern')">Invalid email format.</div>
             </div>
             <div class="gender-box" align="left">
                 <h3>Gender</h3>
@@ -23,10 +26,10 @@
                         <input type="radio" value="female" id="female" name="gender" [(ngModel)]="gender"/>
                         <label for="check-female">Female</label>
                         </div>
-                        <div class="gender">
+                        <!-- <div class="gender">
                         <input type="radio" value="other" id="other" name="gender" [(ngModel)]="gender"/>
                         <label for="check-other">prefer not to say</label>
-                        </div>
+                        </div> -->
                     </div>
             </div>
             <div class="status-input" align="left">
