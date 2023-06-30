@@ -1,53 +1,53 @@
 
-    
+<app-button routerLink="/" color="red" text="Go Back"></app-button>
 <div align="center">
 <section class="container">
         <header>Registration Form</header>
-        <form class="form" (ngSubmit)="onSubmit()">
+        <form  class="form" [formGroup]="formData" (ngSubmit)="submitForm()">
             <div class="input-box" align="left">
                 <label>Full Name*</label>
-                <input type="text" placeholder="Enter full name" name="name" [formControl]="nameControl" [(ngModel)]="name" required />
-                <div *ngIf="nameControl.hasError('pattern')">Invalid name format. Only alphabets and spaces are allowed.</div>
+                <input type="text" placeholder="Enter full name" formControlName="name"  />
+                <!-- <div *ngIf="nameControl.hasError('pattern')">Invalid name format. Only alphabets and spaces are allowed.</div> -->
                 <!-- <div *ngIf="nameControl.hasError('required')">Name is required.</div> -->
+                <div *ngIf="formData.controls['name'].invalid && formData.controls['name'].touched">
+                    <p *ngIf="formData.controls['name'].hasError('required')">Name is required.</p>
+                </div>
             </div>
             <div class="input-box" align="left">
                 <label>Email Address*</label>
-                <input type="text" placeholder="Enter email address" name="email" [formControl]="emailControl" [(ngModel)]="email" required />
-                <div *ngIf="emailControl.hasError('pattern')">Invalid email format.</div>
+                <input type="text" placeholder="Enter email address" formControlName="email"  />
+                <!-- <div *ngIf="emailControl.hasError('pattern')">Invalid email format.</div> -->
+                <div *ngIf="formData.controls['email'].invalid && formData.controls['email'].touched">
+                    <p *ngIf="formData.controls['email'].hasError('required')">Email is required.</p>
+                    <p *ngIf="formData.controls['email'].hasError('email')">Invalid email format.</p>
+                </div>
             </div>
             <div class="gender-box" align="left">
                 <h3>Gender</h3>
                     <div class="gender-option">
                         <div class="gender">
-                        <input type="radio" value="male" id="male" name="gender" [(ngModel)]="gender" checked />
+                        <input type="radio" value="male" id="male" formControlName="gender"/>
                         <label for="check-male">male</label>
                         </div>
                         <div class="gender">
-                        <input type="radio" value="female" id="female" name="gender" [(ngModel)]="gender"/>
+                        <input type="radio" value="female" id="female" formControlName="gender" />
                         <label for="check-female">Female</label>
                         </div>
-                        <!-- <div class="gender">
-                        <input type="radio" value="other" id="other" name="gender" [(ngModel)]="gender"/>
-                        <label for="check-other">prefer not to say</label>
-                        </div> -->
+                        <div *ngIf="formData.controls['gender'].invalid && formData.controls['gender'].touched">
+                            <p *ngIf="formData.controls['gender'].hasError('required')">Gender is required.</p>
+                        </div>
                     </div>
             </div>
             <div class="status-input" align="left">
-                <!-- <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Status</label>
-                </div> -->
                 <span>
                 <p>inactive/active</p>
                 <label class="switch" >
-                    <input type="checkbox" name="status" id="status" [(ngModel)]="status">
+                    <input type="checkbox" formControlName="status" id="status" >
                     <span class="slider round"></span>
                 </label>
                 </span>
             </div>
-            
 
-            <!-- <button>Submit</button> -->
             <input type="submit" value="Submit" class=" submit-btn btn btn-block">
         </form>
         <!-- shows two-way-binding i.e. input and output -->
