@@ -3,7 +3,6 @@ import { UserService } from 'src/app/services/user.service';
 import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { Subject, Subscription,interval,switchMap,take,filter, takeUntil } from 'rxjs';
 
-import { DraftService } from 'src/app/services/draft.service';
 
 
 @Component({
@@ -17,7 +16,7 @@ export class UserFormComponent implements OnInit {
   autoSaveSubscription: Subscription;
   unsubscribe: Subject<void>=new Subject<void>();
 
-  constructor(private userService : UserService,private formBuilder: FormBuilder,private draftService: DraftService){
+  constructor(private userService : UserService,private formBuilder: FormBuilder){
 
     this.formData = this.formBuilder.group({
       name: ['', Validators.required],

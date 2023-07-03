@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { User } from '../User';
+import { BEARER_TOKEN } from '../config';
 
 
 @Injectable({
@@ -14,11 +15,11 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   getUsers() : Observable<User[]>{
-    const headers={'Authorization':'Bearer 077e7fb9c550c5b6d718c4ef76112ac04b6bb25960ab27a563b30f714b70fe09'};
+    const headers={'Authorization':BEARER_TOKEN};
     return this.http.get<User[]>(this.apiUrl,{'headers':headers});
   }
   addUser(user : User) : Observable<User>{
-    const headers={'Authorization':'Bearer 077e7fb9c550c5b6d718c4ef76112ac04b6bb25960ab27a563b30f714b70fe09'};
+    const headers={'Authorization':BEARER_TOKEN};
     return this.http.post<User>(this.apiUrl,user,{'headers':headers});
   }
 }
