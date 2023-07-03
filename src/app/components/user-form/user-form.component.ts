@@ -1,7 +1,9 @@
-import { Component,OnDestroy,OnInit} from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
-import { Subject, switchMap, takeUntil } from 'rxjs';
+import { Subject, Subscription,interval,switchMap,take,filter, takeUntil } from 'rxjs';
+
+import { DraftService } from 'src/app/services/draft.service';
 
 
 @Component({
@@ -9,16 +11,14 @@ import { Subject, switchMap, takeUntil } from 'rxjs';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
 })
-export class UserFormComponent implements OnInit  {
+export class UserFormComponent implements OnInit {
 
   formData: FormGroup;
+  autoSaveSubscription: Subscription;
+  unsubscribe: Subject<void>=new Subject<void>();
 
-  private unsubscribe = new Subject<void>()
+  constructor(private userService : UserService,private formBuilder: FormBuilder,private draftService: DraftService){
 
-
-  constructor(private userService : UserService,private formBuilder: FormBuilder){}
-
-  ngOnInit(): void {
     this.formData = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -26,12 +26,31 @@ export class UserFormComponent implements OnInit  {
       status: [false]
     });
 
-    
+  }
+
+  ngOnInit(): void {
+
+    const draft=localStorage.getItem("formDraft");
+
+    if(draft){
+      this.formData.setValue(JSON.parse(draft));
+    }
+    // else{
+      // this.formData = this.formBuilder.group({
+      //   name: ['', Validators.required],
+      //   email: ['', [Validators.required, Validators.email]],
+      //   gender: ['male', Validators.required],
+      //   status: [false]
+      // });
+    // }
+
+    this.formData.valueChanges.pipe(
+      filter(() => this.formData.valid)
+    )
+    .subscribe((val) => localStorage.setItem("formDraft",JSON.stringify(val)));
 
   }
-//   ngOnDestroy() {
-//     this.unsubscribe.next()
-// }
+
 
   submitForm() {
     if (this.formData.valid) {
@@ -40,9 +59,13 @@ export class UserFormComponent implements OnInit  {
       let newUser=this.formData.value;
       try{
         this.userService.addUser(newUser).subscribe();
+        localStorage.removeItem("formDraft");
+        // tap into error field-not happening
+        // insgtead send a get request and check if 
 
       }
       catch(error){
+        alert("error");
         console.log(error);
         
       }
