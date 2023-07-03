@@ -1,4 +1,13 @@
 <div>
+  <!-- *ngIf="status === onlineStatusCheck.OFFLINE" -->
+  <!-- [class.offline]="status === onlineStatusCheck.OFFLINE" -->
+  <div class="modal" [class.show]="showModal">
+    <div class="modal-content">
+      <h2>You are offline</h2>
+      <p>Please check your internet connection and try again.</p>
+    </div>
+  </div>
+  
   <app-header></app-header>
   
   <router-outlet></router-outlet>
