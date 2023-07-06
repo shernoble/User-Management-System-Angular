@@ -6,8 +6,6 @@
             <div class="input-box" align="left">
                 <label>Full Name*</label>
                 <input type="text" placeholder="Enter full name" formControlName="name"  />
-                <!-- <div *ngIf="nameControl.hasError('pattern')">Invalid name format. Only alphabets and spaces are allowed.</div> -->
-                <!-- <div *ngIf="nameControl.hasError('required')">Name is required.</div> -->
                 <div *ngIf="formData.controls['name'].invalid && formData.controls['name'].touched">
                     <p *ngIf="formData.controls['name'].hasError('required')">Name is required.</p>
                 </div>
@@ -15,7 +13,6 @@
             <div class="input-box" align="left">
                 <label>Email Address*</label>
                 <input type="text" placeholder="Enter email address" formControlName="email"  />
-                <!-- <div *ngIf="emailControl.hasError('pattern')">Invalid email format.</div> -->
                 <div *ngIf="formData.controls['email'].invalid && formData.controls['email'].touched">
                     <p *ngIf="formData.controls['email'].hasError('required')">Email is required.</p>
                     <p *ngIf="formData.controls['email'].hasError('email')">Invalid email format.</p>

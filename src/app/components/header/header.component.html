@@ -1,6 +1,4 @@
-<!-- <div>
-    <h1>User Management System</h1>
-</div> -->
+
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
@@ -11,14 +9,10 @@
         <div *ngIf="hasRoute('/new-user')">
         <li class="nav-item"><app-button routerLink="/" text="Home"></app-button></li>
         </div>
-        <!-- <li class="nav-item"><a href="#" class="nav-link">Add User</a></li> -->
         <div *ngIf="hasRoute('/')">
         <li class="nav-item"><app-button routerLink="/new-user" color="green" text="Add User"></app-button></li>
         </div>
-        <!-- <div *ngIf="hasRoute('/new-user')">
 
-        </div> -->
-        
       </ul>
     </header>
   </div>
