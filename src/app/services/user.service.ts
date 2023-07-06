@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Observable,throwError,catchError} from 'rxjs';
 import { User } from '../User';
-import { BEARER_TOKEN } from '../config';
+import { BEARER_TOKEN } from '../config2';
 
 
 @Injectable({
