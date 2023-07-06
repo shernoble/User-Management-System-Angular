@@ -34,14 +34,6 @@ export class UserFormComponent implements OnInit {
     if(draft){
       this.formData.setValue(JSON.parse(draft));
     }
-    // else{
-      // this.formData = this.formBuilder.group({
-      //   name: ['', Validators.required],
-      //   email: ['', [Validators.required, Validators.email]],
-      //   gender: ['male', Validators.required],
-      //   status: [false]
-      // });
-    // }
 
     this.formData.valueChanges.pipe(
       filter(() => this.formData.valid)

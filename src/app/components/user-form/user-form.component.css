@@ -69,7 +69,7 @@ flex-wrap: wrap;
 column-gap: 5px;
 }
 .gender input {
-accent-color: rgb(130, 106, 251);
+accent-color: #78938A;
 }
 .form :where(.gender input, .gender label) {
 cursor: pointer;
@@ -98,10 +98,10 @@ margin-top: 30px;
 border: none;
 cursor: pointer;
 transition: all 0.2s ease;
-background: rgb(130, 106, 251);
+background: #92BA92;
 }
 .form .submit-btn:hover {
-background: rgb(88, 56, 250);
+background: #557571;
 }
 /*Responsive*/
 @media screen and (max-width: 500px) {
