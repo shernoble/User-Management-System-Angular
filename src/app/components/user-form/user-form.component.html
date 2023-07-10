@@ -23,11 +23,11 @@
                     <div class="gender-option">
                         <div class="gender">
                         <input type="radio" value="male" id="male" formControlName="gender"/>
-                        <label for="check-male">male</label>
+                        <label for="male">Male</label>
                         </div>
                         <div class="gender">
                         <input type="radio" value="female" id="female" formControlName="gender" />
-                        <label for="check-female">Female</label>
+                        <label for="female">Female</label>
                         </div>
                         <div *ngIf="formData.controls['gender'].invalid && formData.controls['gender'].touched">
                             <p *ngIf="formData.controls['gender'].hasError('required')">Gender is required.</p>
@@ -36,7 +36,7 @@
             </div>
             <div class="status-input" align="left">
                 <span>
-                <p>inactive/active</p>
+                <p><label for="status">inactive/active</label></p>
                 <label class="switch" >
                     <input type="checkbox" formControlName="status" id="status" >
                     <span class="slider round"></span>

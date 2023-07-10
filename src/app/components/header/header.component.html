@@ -5,14 +5,12 @@
         <span class="fs-4">User Management System</span>
       </a>
 
-      <ul class="nav nav-pills">
-        <div *ngIf="hasRoute('/new-user')">
+      <ul class="nav nav-pills" *ngIf="hasRoute('/new-user')">
         <li class="nav-item"><app-button routerLink="/" text="Home"></app-button></li>
-        </div>
-        <div *ngIf="hasRoute('/')">
-        <li class="nav-item"><app-button routerLink="/new-user" color="green" text="Add User"></app-button></li>
-        </div>
-
       </ul>
+      <ul class="nav nav-pills" *ngIf="hasRoute('/')">
+        <li class="nav-item"><app-button routerLink="/new-user" color="green" text="Add User"></app-button></li>
+      </ul>
+      
     </header>
   </div>
