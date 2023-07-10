@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Observable,throwError,catchError} from 'rxjs';
 import { User } from '../User';
-import { BEARER_TOKEN } from '../config2';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -15,7 +15,7 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   getUsers() : Observable<User[]>{
-    const headers={'Authorization':BEARER_TOKEN};
+    const headers={'Authorization':environment.bearer_token};
     return this.http.get<User[]>(this.apiUrl,{'headers':headers})
       .pipe(
         catchError((error:HttpErrorResponse) => {
@@ -27,7 +27,7 @@ export class UserService {
       
   }
   addUser(user : User) : Observable<User>{
-    const headers={'Authorization':BEARER_TOKEN};
+    const headers={'Authorization':environment.bearer_token};
     return this.http.post<User>(this.apiUrl,user,{'headers':headers})
     .pipe(
       catchError((error:HttpErrorResponse) => {

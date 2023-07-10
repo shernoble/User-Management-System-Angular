@@ -42,5 +42,10 @@ testem.log
 Thumbs.db
 
 #env
-config2.ts
+
 /user-mngmt-syst-app
+environment.ts
+
+/src/environments
+
+
