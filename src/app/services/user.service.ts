@@ -11,10 +11,14 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   private apiUrl='https://gorest.co.in/public/v2/users';
+  // private cache : Map<string,any>=new Map();
 
   constructor(private http:HttpClient) { }
 
+  
+
   getUsers() : Observable<User[]>{
+    // if cache, return cache else fetch
     const headers={'Authorization':environment.bearer_token};
     return this.http.get<User[]>(this.apiUrl,{'headers':headers})
       .pipe(

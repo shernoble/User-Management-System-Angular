@@ -1,7 +1,7 @@
 import { Component,OnInit} from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
-import { FormControl,FormGroup,FormBuilder,Validators } from '@angular/forms';
-import { Subject, Subscription,interval,switchMap,take,filter, takeUntil } from 'rxjs';
+import {FormGroup,FormBuilder,Validators } from '@angular/forms';
+import { Subject, Subscription,filter } from 'rxjs';
 
 
 
