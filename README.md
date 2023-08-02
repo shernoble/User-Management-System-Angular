@@ -20,7 +20,7 @@ http-server -o
 
 ## :ledger: Index
 
-- [About](#beginner-about)
+<!-- - [About](#beginner-about) -->
 <!-- - [Usage](#zap-usage) -->
   - [Installation](#electric_plug-installation)
   <!-- - [Commands](#package-commands) -->
@@ -40,8 +40,8 @@ http-server -o
 <!-- - [Credit/Acknowledgment](#star2-creditacknowledgment) -->
 <!-- - [License](#lock-license) -->
 
-##  :beginner: About
-Add a detailed introduction about the project here, everything you want the reader to know.
+<!-- ##  :beginner: About
+Add a detailed introduction about the project here, everything you want the reader to know. -->
 
 <!-- ## :zap: Usage
 One can use this project to register users.They can view users even when offline. -->
@@ -59,7 +59,7 @@ One can use this project to register users.They can view users even when offline
 10. The project should now be fully functional.
 
 ```
-$ add installations steps if you have to.
+<!-- $ add installations steps if you have to. -->
 ```
 
 <!-- ###  :package: Commands
