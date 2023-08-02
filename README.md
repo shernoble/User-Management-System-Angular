@@ -1,27 +1,126 @@
-# UserMngmtSyst
+# User Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+<!-- ## gets real
+git init
+git clone:
+npm i
+ng serve
+localhost:4200 -->
 
-## Development server
+<!-- now check for service worker -->
+<!-- ng add @angular/pwa
+ng build
+cd dist/user-mngmt-syst
+http-server -o
+->opens up in server 8080 -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Introduction
+- This is a simple project to register users
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :ledger: Index
 
-## Build
+- [About](#beginner-about)
+<!-- - [Usage](#zap-usage) -->
+  - [Installation](#electric_plug-installation)
+  <!-- - [Commands](#package-commands) -->
+<!-- - [Development](#wrench-development) -->
+  - [Pre-Requisites](#notebook-pre-requisites)
+  <!-- - [Developmen Environment](#nut_and_bolt-development-environment) -->
+  <!-- - [File Structure](#file_folder-file-structure) -->
+  - [Build](#hammer-build)  
+  <!-- - [Deployment](#rocket-deployment)   -->
+<!-- - [Community](#cherry_blossom-community) -->
+  <!-- - [Contribution](#fire-contribution) -->
+  <!-- - [Branches](#cactus-branches) -->
+  <!-- - [Guideline](#exclamation-guideline)   -->
+<!-- - [FAQ](#question-faq) -->
+- [Resources](#page_facing_up-resources)
+- [Gallery](#camera-gallery)
+<!-- - [Credit/Acknowledgment](#star2-creditacknowledgment) -->
+<!-- - [License](#lock-license) -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+##  :beginner: About
+Add a detailed introduction about the project here, everything you want the reader to know.
 
-## Running unit tests
+<!-- ## :zap: Usage
+One can use this project to register users.They can view users even when offline. -->
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+###  :electric_plug: Installation
+1.Create an empty folder and initialize an empty git repo using the command "git init"
+2.In terminal, navigate to the folder and type "git clone https://github.com/shernoble/User-Management-System-Angular.git"
+3.Now, all the project files will be downloaded. Install the dependencies using the command "npm i"
+4.Type the command to add the angular pwa package to use service workers "ng add @angular/pwa"
+5.Build the app for production with the command "ng build"
+6.Go to the dist folder "cd dist/user-mngmt-syst"
+7.Serve with http-server "http-server -o"
+8.Application opens up in server 8080.
+9.In the dev tools, under Application->Service Workers, check the "Update on reload" box.
+10.The project should now be fully functional.
 
-## Running end-to-end tests
+```
+$ add installations steps if you have to.
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<!-- ###  :package: Commands
+- Commands to start the project. -->
 
-## Further help
+<!-- ##  :wrench: Development
+If you want other people to contribute to this project, this is the section, make sure you always add this. -->
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### :notebook: Pre-Requisites
+- Angular CLI
+- 
+
+<!-- ###  :nut_and_bolt: Development Environment
+Write about setting up the working environment for your project.
+- How to download the project...
+- How to install dependencies... -->
+
+
+<!-- ###  :file_folder: File Structure
+Add a file structure here with the basic details about files, below is an example.
+
+```
+.
+├── assets
+│   ├── css
+│   │   ├── index-ui.css
+│   │   └── rate-ui.css
+│   ├── images
+│   │   ├── icons
+│   │   │   ├── shrink-button.png
+│   │   │   └── umbrella.png
+│   │   ├── logo_144.png
+│   │   └── Untitled-1.psd
+│   └── javascript
+│       ├── index.js
+│       └── rate.js
+├── CNAME
+├── index.html
+├── rate.html
+└── README.md
+```
+
+| No | File Name | Details 
+|----|------------|-------|
+| 1  | index | Entry point -->
+
+
+
+##  :page_facing_up: Resources
+-https://angular.io/docs
+-https://www.geekstrick.com/angular-pwa-fast-offline-angular-9-application/
+- 
+
+##  :camera: Gallery
+Pictures of your project.
+![Users list](image.png)
+![user registration](image-1.png)
+![Cached data](image-2.png)
+
+<!-- ## :star2: Credit/Acknowledgment
+Credit the authors here.
+
+##  :lock: License
+Add a license here, or a link to it. -->
