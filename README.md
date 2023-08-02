@@ -28,7 +28,7 @@ http-server -o
   - [Pre-Requisites](#notebook-pre-requisites)
   <!-- - [Developmen Environment](#nut_and_bolt-development-environment) -->
   <!-- - [File Structure](#file_folder-file-structure) -->
-  - [Build](#hammer-build)  
+  <!-- - [Build](#hammer-build)   -->
   <!-- - [Deployment](#rocket-deployment)   -->
 <!-- - [Community](#cherry_blossom-community) -->
   <!-- - [Contribution](#fire-contribution) -->
@@ -70,7 +70,6 @@ If you want other people to contribute to this project, this is the section, mak
 
 ### :notebook: Pre-Requisites
 - Angular CLI
-- 
 
 <!-- ###  :nut_and_bolt: Development Environment
 Write about setting up the working environment for your project.
@@ -109,9 +108,8 @@ Add a file structure here with the basic details about files, below is an exampl
 
 
 ##  :page_facing_up: Resources
--https://angular.io/docs
--https://www.geekstrick.com/angular-pwa-fast-offline-angular-9-application/
-- 
+- https://angular.io/docs
+- https://www.geekstrick.com/angular-pwa-fast-offline-angular-9-application/
 
 ##  :camera: Gallery
 Pictures of your project.
