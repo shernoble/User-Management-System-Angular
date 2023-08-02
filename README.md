@@ -47,16 +47,16 @@ Add a detailed introduction about the project here, everything you want the read
 One can use this project to register users.They can view users even when offline. -->
 
 ###  :electric_plug: Installation
-1.Create an empty folder and initialize an empty git repo using the command "git init"
-2.In terminal, navigate to the folder and type "git clone https://github.com/shernoble/User-Management-System-Angular.git"
-3.Now, all the project files will be downloaded. Install the dependencies using the command "npm i"
-4.Type the command to add the angular pwa package to use service workers "ng add @angular/pwa"
-5.Build the app for production with the command "ng build"
-6.Go to the dist folder "cd dist/user-mngmt-syst"
-7.Serve with http-server "http-server -o"
-8.Application opens up in server 8080.
-9.In the dev tools, under Application->Service Workers, check the "Update on reload" box.
-10.The project should now be fully functional.
+1. Create an empty folder and initialize an empty git repo using the command "git init"
+2. In terminal, navigate to the folder and type "git clone https://github.com/shernoble/User-Management-System-Angular.git"
+3. Now, all the project files will be downloaded. Install the dependencies using the command "npm i"
+4. Type the command to add the angular pwa package to use service workers "ng add @angular/pwa"
+5. Build the app for production with the command "ng build"
+6. Go to the dist folder "cd dist/user-mngmt-syst"
+7. Serve with http-server "http-server -o"
+8. Application opens up in server 8080.
+9. In the dev tools, under Application->Service Workers, check the "Update on reload" box.
+10. The project should now be fully functional.
 
 ```
 $ add installations steps if you have to.
